@@ -1,5 +1,6 @@
 ---
-import '../styles/global.scss'
+import '../styles/global.scss';
+import Header from '../components/Header.astro'
 ---
 <!doctype html>
 <html lang="en">
@@ -10,7 +11,9 @@ import '../styles/global.scss'
 		<title>OldRuNet</title>
 	</head>
 	<body>
-		хихихи
-		<slot />
+		<div class="container">
+			<Header />
+			<slot />
+		</div>
 	</body>
 </html>

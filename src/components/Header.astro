@@ -1,0 +1,23 @@
+---
+import Logo from "./Logo.astro";
+import catchphrases from "../../catchphrases/catchphrases.json";
+import classes from "../styles/header.module.scss";
+---
+
+<div class={classes["header-container"]}>
+    <Logo />
+    <span class=`catchphrase ${classes["catchphrase"]}`>
+        <!-- {catchphrases[0]} -->
+    </span>
+</div>
+
+<!-- have to do it in script as needed for dynamic data -->
+<script>
+    import catchphrases from "../../catchphrases/catchphrases.json";
+    import randomNumber from "../helpers/random_number";
+
+    const phraseSpan = document.querySelector(".catchphrase");
+    if (phraseSpan)
+        phraseSpan.innerHTML =
+            catchphrases[randomNumber({ min: 0, max: catchphrases.length })];
+</script>
