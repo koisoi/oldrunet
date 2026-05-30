@@ -1,0 +1,39 @@
+@use './mixins' as *;
+@use './variables' as *;
+@use "sass:color";
+
+.navigation {
+    @include gradient-bg(color.adjust($primary-color, $blackness: 40%), $primary-color);
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        padding: 0;
+
+        li {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+            border-right: 1px solid color.adjust($primary-contrast-color, $alpha: -0.8);
+
+            cursor: pointer;
+
+            a {
+                display: block;
+                text-decoration: none;
+                color: inherit;
+            }
+
+            &:hover {
+                @include gradient-bg(color.adjust($primary-color, $blackness: 20%), color.adjust($primary-color, $blackness: 60%));
+            }
+        }
+    }
+}

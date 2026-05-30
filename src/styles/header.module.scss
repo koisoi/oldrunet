@@ -1,5 +1,6 @@
 @use "sass:color";
 @use './variables' as *;
+@use "./mixins" as *;
 
 .header-container {
     display: flex;
@@ -10,15 +11,10 @@
     padding-left: $container-padding;
     padding-right: $container-padding;
 
-    background: #ffae00;
-    background: -webkit-linear-gradient(0deg, rgba(255, 174, 0, 1) 0%, rgba(255, 222, 173, 1) 100%);
-    background: -moz-linear-gradient(0deg, rgba(255, 174, 0, 1) 0%, rgba(255, 222, 173, 1) 100%);
-    background: linear-gradient(0deg, rgba(255, 174, 0, 1) 0%, rgba(255, 222, 173, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFAE00",
-            endColorstr="#FFDEAD",
-            GradientType=0);
+    @include gradient-bg(color.adjust($accent-color, $saturation: 20%, $lightness: -40%), $accent-color);
+    color: $accent-contrast-color;
 }
 
 .catchphrase {
-    color: color.adjust($text-color, $alpha: 0.1);
+    font-size: 1.1rem;
 }

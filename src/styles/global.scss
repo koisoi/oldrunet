@@ -1,18 +1,23 @@
 @use './variables' as *;
 
-html, body {
-		margin: 0;
-		width: 100vw;
-		height: 100vh;
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    min-width: 1280px;
 
-        background: lightyellow;
-        font-size: 14pt;
-        font-family: Arial, Helvetica, sans-serif;
+    background: $background-color;
+    font-size: 14pt;
+    font-family: Arial, Helvetica, sans-serif;
 
-        display: flex;
-        justify-content: center;
-        color: $text-color;
-	}
+    display: flex;
+    justify-content: center;
+    color: $text-color;
+}
+
+* {
+    margin: 0
+}
 
 .container {
     width: 80%;

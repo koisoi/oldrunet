@@ -1,7 +1,9 @@
 ---
-import '../styles/global.scss';
-import Header from '../components/Header.astro'
+import "../styles/global.scss";
+import Header from "../components/Header.astro";
+import Nav from "../components/Nav.astro";
 ---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -12,6 +14,7 @@ import Header from '../components/Header.astro'
 	</head>
 	<body>
 		<div class="container">
+			<Nav />
 			<Header />
 			<slot />
 		</div>

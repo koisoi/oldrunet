@@ -1,0 +1,30 @@
+@use "sass:list";
+@use "sass:math";
+@use "sass:string";
+
+@mixin gradient-bg($colors...) {
+    $step: 0%;
+    $lastStep: 0%;
+
+    @if (list.length($colors) <=1) {
+        $step: 100%;
+        $lastStep: $step;
+    }
+
+    @else {
+        $step: math.div(100%, list.length($colors) - 1);
+    }
+
+    $gradient: "0deg";
+
+    @for $i from 1 through list.length($colors) {
+        $gradient: $gradient + ", " + list.nth($colors, $i) + " " + $lastStep;
+        $lastStep: $lastStep + $step;
+    }
+
+    background: list.nth($colors, 1);
+    background: -webkit-linear-gradient(string.unquote($gradient));
+    background: -moz-linear-gradient(string.unquote($gradient));
+    background: linear-gradient(string.unquote($gradient));
+    filter: progid:DXImageTransform.Microsoft.gradient("startColorstr=" + color.ie-hex-str($colors, 1) + ",endColorstr=" + color.ie-hex-str($colors, list.length($colors)) + ",GradientType=0");
+}
