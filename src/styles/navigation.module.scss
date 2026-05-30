@@ -15,24 +15,32 @@
 
         li {
             flex-grow: 1;
-            display: flex;
-            justify-content: center;
-
-            padding-top: 5px;
-            padding-bottom: 5px;
 
             border-right: 1px solid color.adjust($primary-contrast-color, $alpha: -0.8);
 
-            cursor: pointer;
-
             a {
-                display: block;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                width: 100%;
+                height: 100%;
+
+                display: flex;
+                justify-content: center;
+
                 text-decoration: none;
                 color: inherit;
-            }
 
-            &:hover {
-                @include gradient-bg(color.adjust($primary-color, $blackness: 20%), color.adjust($primary-color, $blackness: 60%));
+                &:hover {
+                    @include gradient-bg(color.adjust($primary-color, $blackness: 20%), color.adjust($primary-color, $blackness: 60%));
+                }
+
+                &.active {
+                    @include gradient-bg(color.adjust($accent-color, $saturation: 20%, $lightness: -40%), $accent-color);
+                    color: $accent-contrast-color;
+
+                    // no ie support
+                    pointer-events: none;
+                }
             }
         }
     }

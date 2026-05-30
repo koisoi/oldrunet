@@ -1,15 +1,51 @@
 ---
 import classes from "../styles/navigation.module.scss";
+
+const currLocation = Astro.url.pathname.split("/")[1] || "/";
 ---
 
 <nav class={classes["navigation"]}>
     <ul>
-        <li><a href="/">Главная</a></li>
-        <li><a href="/games/">Игротека</a></li>
-        <li><a href="/videos/">Кинозал</a></li>
-        <li><a href="/gallery/">Галерея</a></li>
-        <li><a href="/pages/">Интернет</a></li>
-        <li><a href="/chatroom/">Чат</a></li>
-        <li><a href="/forum/">Форум</a></li>
+        <li>
+            <a href="/" class={currLocation == "/" ? classes["active"] : ""}
+                >Главная</a
+            >
+        </li>
+        <li>
+            <a
+                href="/games/"
+                class={currLocation == "games" ? classes["active"] : ""}
+                >Игротека</a>
+        </li>
+        <li>
+            <a
+                href="/videos/"
+                class={currLocation == "videos" ? classes["active"] : ""}
+                >Кинозал</a>
+        </li>
+        <li>
+            <a
+                href="/gallery/"
+                class={currLocation == "gallery" ? classes["active"] : ""}
+                >Галерея</a>
+        </li>
+        <li>
+            <a
+                href="/pages/"
+                class={currLocation == "pages" ? classes["active"] : ""}
+                >Интернет</a>
+        </li>
+        <li>
+            <a
+                href="/chatroom/"
+                class={currLocation == "chatroom" ? classes["active"] : ""}
+                >Чат</a>
+        </li>
+        <li>
+            <a
+                href="/forum/"
+                class={currLocation == "forum" ? classes["active"] : ""}
+                >Форум</a>
+        </li>
     </ul>
 </nav>

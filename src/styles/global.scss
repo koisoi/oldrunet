@@ -1,4 +1,5 @@
 @use './variables' as *;
+@use './reset';
 
 html,
 body {
@@ -13,10 +14,6 @@ body {
     display: flex;
     justify-content: center;
     color: $text-color;
-}
-
-* {
-    margin: 0
 }
 
 .container {

@@ -19,5 +19,8 @@ import classes from "../styles/header.module.scss";
     const phraseSpan = document.querySelector(".catchphrase");
     if (phraseSpan)
         phraseSpan.innerHTML =
-            catchphrases[randomNumber({ min: 0, max: catchphrases.length })];
+            catchphrases[
+                randomNumber({ min: 0, max: catchphrases.length - 1 })
+            ];
+    console.log();
 </script>

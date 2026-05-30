@@ -22,7 +22,7 @@
         $lastStep: $lastStep + $step;
     }
 
-    background: list.nth($colors, 1);
+    background: list.nth($colors, list.length(colors));
     background: -webkit-linear-gradient(string.unquote($gradient));
     background: -moz-linear-gradient(string.unquote($gradient));
     background: linear-gradient(string.unquote($gradient));
