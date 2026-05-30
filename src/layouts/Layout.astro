@@ -1,7 +1,9 @@
 ---
 import "../styles/global.scss";
+import classes from "../styles/layout.module.scss";
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -13,10 +15,15 @@ import Nav from "../components/Nav.astro";
 		<title>OldRuNet</title>
 	</head>
 	<body>
-		<div class="container">
+		<div class={classes["container"]}>
 			<Nav />
 			<Header />
-			<slot />
+			<div class={classes["lower-container"]}>
+				<main>
+					<slot />
+				</main>
+				<Footer />
+			</div>
 		</div>
 	</body>
 </html>
