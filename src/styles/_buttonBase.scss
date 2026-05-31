@@ -1,0 +1,25 @@
+@use './variables' as *;
+@use './mixins' as *;
+@use "sass:color";
+
+.button {
+    display: inline-block;
+    padding: 10px;
+
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+
+    border-radius: 20px;
+    border: 1px solid color.adjust($primary-color, $blackness: 20%);
+
+    color: $primary-contrast-color;
+
+    @include glossy-gradient-bg($primary-color, color.adjust($primary-color, $blackness: 20%), color.adjust($primary-color, $blackness: 60%));
+
+    &:hover {
+        @include gradient-bg($primary-color, color.adjust($primary-color, $blackness: 40%));
+        box-shadow: 0 0 10px color.adjust($primary-contrast-color, $alpha: -0.7) inset;
+    }
+}

@@ -1,14 +1,15 @@
 @use "sass:list";
 @use "sass:math";
 @use "sass:string";
+@use "sass:color";
 
 @mixin gradient-bg($colors...) {
     $step: 0%;
-    $lastStep: 0%;
+    $last-step: 0%;
 
     @if (list.length($colors) <=1) {
         $step: 100%;
-        $lastStep: $step;
+        $last-step: $step;
     }
 
     @else {
@@ -18,13 +19,25 @@
     $gradient: "0deg";
 
     @for $i from 1 through list.length($colors) {
-        $gradient: $gradient + ", " + list.nth($colors, $i) + " " + $lastStep;
-        $lastStep: $lastStep + $step;
+        $gradient: $gradient + ", " + list.nth($colors, $i) + " " + $last-step;
+        $last-step: $last-step + $step;
     }
 
     background: list.nth($colors, list.length(colors));
     background: -webkit-linear-gradient(string.unquote($gradient));
     background: -moz-linear-gradient(string.unquote($gradient));
     background: linear-gradient(string.unquote($gradient));
-    filter: progid:DXImageTransform.Microsoft.gradient("startColorstr=" + color.ie-hex-str($colors, 1) + ",endColorstr=" + color.ie-hex-str($colors, list.length($colors)) + ",GradientType=0");
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{color.ie-hex-str(list.nth($colors, 1))}, endColorstr=#{color.ie-hex-str(list.nth($colors, list.length($colors)))}, GradientType=0)
 }
+
+// background: linear-gradient(0deg, $primary-color 0%, color.adjust($primary-color, $blackness: 60%) 50%, $primary-color 51%, color.adjust($primary-color, $blackness: 20%) 100%);
+
+@mixin glossy-gradient-bg($main-color, $dark-color, $darkest-color) {
+    background: $main-color;
+    background: -webkit-linear-gradient(0deg, $main-color 0%, $darkest-color 50%, $main-color 51%, $dark-color 100%);
+    background: -moz-linear-gradient(0deg, $main-color 0%, $darkest-color 50%, $main-color 51%, $dark-color 100%);
+    background: linear-gradient(0deg, $main-color 0%, $darkest-color 50%, $main-color 51%, $dark-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{color.ie-hex-str($main-color)}, endColorstr=#{color.ie-hex-str($dark-color)}, GradientType=0)
+}
+
+// @mixin pushed-button()

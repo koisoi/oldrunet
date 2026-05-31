@@ -15,37 +15,39 @@ const currLocation = Astro.url.pathname.split("/")[1] || "/";
             <a
                 href="/games/"
                 class={currLocation == "games" ? classes["active"] : ""}
-                >Игротека</a>
+                >Игротека</a
+            >
         </li>
         <li>
             <a
                 href="/videos/"
                 class={currLocation == "videos" ? classes["active"] : ""}
-                >Кинозал</a>
+                >Кинозал</a
+            >
         </li>
         <li>
             <a
                 href="/gallery/"
                 class={currLocation == "gallery" ? classes["active"] : ""}
-                >Галерея</a>
+                >Галерея</a
+            >
         </li>
         <li>
             <a
                 href="/pages/"
                 class={currLocation == "pages" ? classes["active"] : ""}
-                >Интернет</a>
+                >Интернет</a
+            >
         </li>
         <li>
             <a
                 href="/chatroom/"
                 class={currLocation == "chatroom" ? classes["active"] : ""}
-                >Чат</a>
+                >Чат</a
+            >
         </li>
         <li>
-            <a
-                href="/forum/"
-                class={currLocation == "forum" ? classes["active"] : ""}
-                >Форум</a>
+            <a href="https://oldrunet.bbtalk.me/">Форум</a>
         </li>
     </ul>
 </nav>
