@@ -1,11 +1,40 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import classes from "../styles/welcome.module.scss";
 ---
 
 <Layout>
-	<Welcome />
+	<div class={classes["page"]}>
+		<h1>Добро пожаловать на OldRuNet!</h1>
+
+		<div class={classes["greeting"]}>
+			<embed src="/swf/pesenka_e.swf" width="300" height="300" />
+			<div>
+				<p>
+					OldRuNet — имитация случайного сайта из 2010-ых годов и
+					место для всех тех, кто помнит интернет таким, каким он был:
+					нелепым, рандомным, но зато с душой!
+				</p>
+				<p>
+					Для кого-то этот сайт будет воспоминанием 10-20-летней
+					давности, для кого-то — маленьким экспонатом, отражающим
+					кусочек истории Интернета, для кого-то, может, просто
+					набором устаревших технологий. В конце концов, это всего
+					лишь сборная солянка всего самого, на наш взгляд,
+					интересного, что было в старом ру(и не только!)нете.
+				</p>
+				<p>
+					Мы рады всем! Исследуйте, читайте, тыкайте, воспроизводите,
+					играйте во все, что тут разбросано, но самое главное —
+					отдыхайте и развлекайтесь :)
+				</p>
+				<p>
+					P.S.: Для просмотра флеш-контента на сайте установили
+					Ruffle, но он работает далеко не для всех игр... О том, как
+					заставить любимые игры работать читать <a href="#">здесь</a
+					>.
+				</p>
+			</div>
+		</div>
+	</div>
 </Layout>

@@ -1,0 +1,17 @@
+.page {
+
+    .greeting {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        embed,
+        ruffle-embed {
+            flex: 0 0 300px;
+        }
+
+        div {
+            flex-grow: 1;
+        }
+    }
+}

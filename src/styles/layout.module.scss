@@ -2,8 +2,9 @@
 @use "sass:color";
 
 .container {
-    width: 80%;
-    background: snow;
+    width: 1500px;
+    min-width: 1500px;
+    background: $background-color;
 
     display: flex;
     flex-direction: column;
@@ -21,5 +22,6 @@
 
     main {
         flex-grow: 1;
+        padding: 20px;
     }
 }

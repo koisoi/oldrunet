@@ -5,13 +5,22 @@ html,
 body {
     width: 100vw;
     height: 100vh;
-    min-width: 1280px;
+    min-width: 1900px;
 
-    background: $background-color;
+    background: $site-background-color;
     font-size: 14pt;
     font-family: Arial, Helvetica, sans-serif;
 
     display: flex;
     justify-content: center;
     color: $text-color;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+p:not(:last-child) {
+    margin-bottom: 1rem;
 }
