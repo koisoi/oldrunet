@@ -1,1 +1,7 @@
-@use './buttonBase';
+@use './buttonBase' as *;
+@use './variables' as *;
+@use "sass:color";
+
+.button {
+    @include button-coloring(limegreen, limegreen, forestgreen, $accent-contrast-color);
+}
