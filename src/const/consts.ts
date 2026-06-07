@@ -1,4 +1,4 @@
-export const base = '/old-ru-net';
+export const base = '/oldrunet';
 
 export const links = {
     chat: `${base}/chatroom`
