@@ -1,47 +1,49 @@
 ---
+import { base, links } from "../const/consts";
 import classes from "../styles/navigation.module.scss";
 
-const currLocation = Astro.url.pathname.split("/")[1] || "/";
+const currLocation = Astro.url.pathname.split("/")[2] || "/";
 ---
 
 <nav class={classes["navigation"]}>
     <ul>
         <li>
-            <a href="/" class={currLocation == "/" ? classes["active"] : ""}
-                >Главная</a
+            <a
+                href=`${base}/`
+                class={currLocation == "/" ? classes["active"] : ""}>Главная</a
             >
         </li>
         <li>
             <a
-                href="/games/"
+                href=`${base}/games/`
                 class={currLocation == "games" ? classes["active"] : ""}
                 >Игротека</a
             >
         </li>
         <li>
             <a
-                href="/videos/"
+                href=`${base}/videos/`
                 class={currLocation == "videos" ? classes["active"] : ""}
                 >Кинозал</a
             >
         </li>
         <li>
             <a
-                href="/gallery/"
+                href=`${base}/gallery/`
                 class={currLocation == "gallery" ? classes["active"] : ""}
                 >Галерея</a
             >
         </li>
         <li>
             <a
-                href="/pages/"
+                href=`${base}/pages/`
                 class={currLocation == "pages" ? classes["active"] : ""}
                 >Интернет</a
             >
         </li>
         <li>
             <a
-                href="/chatroom/"
+                href=`${links.chat}`
                 class={currLocation == "chatroom" ? classes["active"] : ""}
                 >Чат</a
             >

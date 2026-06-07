@@ -1,6 +1,7 @@
 ---
 import Chat from "../components/Chat.astro";
 import ChatButton from "../components/ChatButton.astro";
+import { base } from "../const/consts";
 import Layout from "../layouts/Layout.astro";
 import classes from "../styles/welcome.module.scss";
 ---
@@ -10,7 +11,7 @@ import classes from "../styles/welcome.module.scss";
 		<h1>Добро пожаловать на OldRuNet!</h1>
 
 		<div class={classes["greeting"]}>
-			<embed src="/swf/pesenka_e.swf" width="300" height="300" />
+			<embed src=`${base}/swf/pesenka_e.swf` width="300" height="300" />
 			<div>
 				<p>
 					OldRuNet — имитация случайного сайта из 2010-ых годов и

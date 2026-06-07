@@ -4,6 +4,7 @@ import classes from "../styles/layout.module.scss";
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import { base } from "../const/consts";
 ---
 
 <!doctype html>
@@ -11,9 +12,9 @@ import Footer from "../components/Footer.astro";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/smile.gif" />
+		<link rel="icon" href=`${base}/smile.gif` />
 		<title>OldRuNet</title>
-		<script is:inline src="/ruffle/ruffle.js"></script>
+		<script is:inline src=`${base}/ruffle/ruffle.js`></script>
 	</head>
 	<body>
 		<div class={classes["container"]}>
