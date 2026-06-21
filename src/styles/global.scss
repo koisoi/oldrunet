@@ -3,8 +3,8 @@
 
 html,
 body {
+    height: 100%;
     width: 100vw;
-    height: 100vh;
     min-width: 1900px;
 
     background: $site-background-color;
@@ -17,6 +17,11 @@ body {
 }
 
 h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+h2 {
     margin-bottom: 2rem;
     text-align: center;
 }

@@ -4,6 +4,6 @@
 @use "sass:color";
 
 .button {
-    $button-color: color.adjust(limegreen, $saturation: -10%, $lightness: 5%);
+    $button-color: color.adjust(red, $saturation: -20%, $lightness: 5%);
     @include button-coloring($button-color, color.adjust($button-color, $lightness: 20%), color.adjust($button-color, $lightness: -20%), $accent-contrast-color);
 }
