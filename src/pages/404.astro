@@ -1,0 +1,16 @@
+---
+import { links } from "../const/consts";
+import Layout from "../layouts/Layout.astro";
+import classes from "../styles/404.module.scss";
+import buttonClasses from "../styles/mainButton.module.scss";
+---
+
+<Layout>
+    <div class={classes["container"]}>
+        <p class={classes["error"]}>404</p>
+        <p>Ой! Такой страницы не существует... :(</p>
+        <a href={links.main} class={buttonClasses["button"]}
+            >Вернуться на главную</a
+        >
+    </div>
+</Layout>

@@ -13,5 +13,5 @@
 
     border-radius: 20px;
 
-    @include button-coloring($primary-color, color.adjust($primary-color, $blackness: 20%), color.adjust($primary-color, $blackness: 60%), $primary-contrast-color);
+    @include button-coloring($primary-color, color.adjust($primary-color, $blackness: 10%), color.adjust($primary-color, $blackness: 40%), $primary-contrast-color);
 }
