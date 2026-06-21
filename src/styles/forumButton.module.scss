@@ -1,0 +1,7 @@
+@use './buttonBase' as *;
+@use './variables' as *;
+@use "sass:color";
+
+.button {
+    @include button-coloring($accent-color, color.adjust($accent-color, $lightness: 10%), color.adjust($accent-color, $lightness: -30%), $accent-contrast-color);
+}

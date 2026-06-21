@@ -3,5 +3,5 @@
 @use "sass:color";
 
 .button {
-    @include button-coloring(limegreen, limegreen, forestgreen, $accent-contrast-color);
+    @include button-coloring(limegreen, springgreen, forestgreen, $accent-contrast-color);
 }
