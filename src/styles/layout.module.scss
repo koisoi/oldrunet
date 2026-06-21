@@ -1,4 +1,5 @@
 @use './variables' as *;
+@use "./mixins" as *;
 @use "sass:color";
 
 .container {
@@ -16,7 +17,7 @@
         flex-direction: column;
         justify-content: stretch;
 
-        border: 1px solid color.adjust($primary-contrast-color, $alpha: -0.8);
+        @include container-border;
         border-bottom: none;
     }
 

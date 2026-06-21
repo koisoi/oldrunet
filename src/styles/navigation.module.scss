@@ -1,10 +1,9 @@
 @use './mixins' as *;
 @use './variables' as *;
+@use './buttonBase' as *;
 @use "sass:color";
 
 .navigation {
-    @include gradient-bg(color.adjust($primary-color, $blackness: 40%), $primary-color);
-
     ul {
         list-style-type: none;
         display: flex;
@@ -30,13 +29,14 @@
                 text-decoration: none;
                 color: inherit;
 
+                @include button-coloring($primary-color, color.adjust($primary-color, $blackness: 10%), color.adjust($primary-color, $blackness: 30%), $primary-contrast-color);
+
                 &:hover {
                     @include gradient-bg(color.adjust($primary-color, $blackness: 20%), color.adjust($primary-color, $blackness: 60%));
                 }
 
                 &.active {
-                    @include gradient-bg(color.adjust($accent-color, $saturation: 20%, $lightness: -40%), $accent-color);
-                    color: $accent-contrast-color;
+                    @include button-coloring($accent-color, color.adjust($accent-color, $lightness: 10%), color.adjust($accent-color, $lightness: -30%), $accent-contrast-color);
 
                     // no ie support
                     pointer-events: none;

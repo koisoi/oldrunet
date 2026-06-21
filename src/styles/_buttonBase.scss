@@ -2,19 +2,6 @@
 @use './mixins' as *;
 @use "sass:color";
 
-@mixin button-coloring($light-color, $darker-color, $darkest-color, $contrast-color) {
-    border: 1px solid $darker-color;
-
-    color: $contrast-color;
-
-    @include glossy-gradient-bg($light-color, $darker-color, $darkest-color);
-
-    &:hover {
-        @include gradient-bg($light-color, $darkest-color);
-        box-shadow: 0 0 10px color.adjust($contrast-color, $alpha: -0.7) inset;
-    }
-}
-
 .button {
     display: inline-block;
     padding: 10px;

@@ -11,10 +11,18 @@
     padding-left: $container-padding;
     padding-right: $container-padding;
 
-    @include gradient-bg(color.adjust($accent-color, $saturation: 20%, $lightness: -40%), $accent-color);
-    color: $accent-contrast-color;
+    background-color: $background-color;
+    font-weight: bolder;
+
+    @include container-border;
+    border-top: 0;
+
+    div,
+    span {
+        @include gradient-text(color.adjust($accent-color, $lightness: -30%, $saturation: -10%), $accent-color);
+    }
 }
 
 .catchphrase {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
 }

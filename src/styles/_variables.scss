@@ -1,8 +1,10 @@
+@use "sass:color";
+
 $text-color: #000;
 $background-color: white;
 $site-background-color: snow;
 
-$accent-color: skyblue;
+$accent-color: color.adjust(skyblue, $lightness: -5%, $saturation: -5%);
 $accent-contrast-color: snow;
 
 $primary-color: snow;

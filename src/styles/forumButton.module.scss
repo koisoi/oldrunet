@@ -1,5 +1,6 @@
 @use './buttonBase' as *;
 @use './variables' as *;
+@use './mixins' as *;
 @use "sass:color";
 
 .button {

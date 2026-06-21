@@ -1,7 +1,9 @@
 @use './buttonBase' as *;
 @use './variables' as *;
+@use './mixins' as *;
 @use "sass:color";
 
 .button {
-    @include button-coloring(limegreen, springgreen, forestgreen, $accent-contrast-color);
+    $button-color: color.adjust(limegreen, $saturation: -10%, $lightness: 5%);
+    @include button-coloring($button-color, color.adjust($button-color, $lightness: 20%), color.adjust($button-color, $lightness: -15%), $accent-contrast-color);
 }
